@@ -1,7 +1,64 @@
-char op;
-    double num1;
-    double num2;
-    double result;
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void tugas_1 (){
+    //Tugas Geometri
+    float sisi,luasB; // bujursangkar
+    float jari,luasL; //lingkaran
+    float alas,tinggi,luasS; //segitiga
+    float sisiA,sisiB,sisiT,luasT; //trapesium
+    const float phi = 3.14;
+
+    //Luas Bujursangkar
+    cout << "***** BUJUR SANGKAR *****" << endl;
+    cout << "Masukkan Sisi: ";
+    cin >> sisi;
+    luasB = sisi * sisi;
+    cout << "Luas : " << luasB << endl;
+
+    //Luas lingkaran
+    cout << "***** LINGKARAN *****" << endl;
+    cout << "Masukkan Jari-jari: ";
+    cin >> jari;
+    luasL = phi * pow(jari,2);
+    cout << "Luas : " << luasL << endl;
+
+    //Luas segitiga
+    cout << "***** SEGITIGA *****" << endl;   
+    cout << "Masukkan Alas: ";
+    cin >> alas;
+    cout << "Masukkan Tinggi: ";
+    cin >> tinggi;
+    luasS = 0.5 * alas * tinggi;
+    cout << "Luas: " << luasS << endl;;
+
+    //Luas trapesium
+    cout << "***** TRAPESIUM *****" << endl;
+    cout << "Masukkan Sisi a : ";
+    cin >> sisiA;
+    cout << "Masukkan Sisi b : ";
+    cin >> sisiB;
+    cout << "Masukkan Sisi t : ";
+    cin >> sisiT;
+    luasT = 0.5 * (sisiT * (sisiA + sisiB));
+    cout << "Luas : " << luasT << endl;
+
+}
+
+void tugas_2(){
+    //Tugas menghitung harga barang
+    float harga = 5203.02;
+    float unit,total;
+    cout << "***** HARGA BARANG *****" << endl;
+    cout << "Jumlah Unit : ";
+    cin >> unit;
+    total = unit * harga;
+    cout << "Total harga: " << total << endl;
+}
+void tugas_3(){
+    char op;
+    double num1,num2,result;
 
    cout << "******* CALCULATOR ********" <<endl;
    cout << "Enter either ( + - * /): ";
@@ -34,3 +91,15 @@ char op;
    cout << "Please Choose any of this operation ( + - * /)";
     break;
    }
+}
+void tugas_4(){
+
+}
+
+int main (){
+    //tugas_1();
+    //tugas_2();
+    //tugas_3();
+    tugas_4();
+    return 0;
+}
