@@ -1,0 +1,155 @@
+#include <iostream>
+using namespace std;
+
+void tugas_1(){
+    //FOR
+    for(int i=0; i < 4; i++){
+cout << i << endl;
+}
+for(int i=3; i > 0; i--){
+cout << i << endl;
+}
+for (int i = 10; i >= 0; i-= 2){
+    cout << i << " ";
+}
+}
+void tugas_2(){
+    int n, sigma = 0;
+    cout << "Masukkan bilangan positif: ";
+    cin >> n;
+    for(int i = 1; i<=n; i++){
+        sigma += i;
+    }
+    cout << "Jumlah dari " << n << " bil pertama adalah: " << sigma << endl;
+}
+void tugas_3(){
+    //WHILE
+    int i=1, n, sigma = 0;
+    cout << "Masukkan bilangan positif: ";
+    cin >> n;
+    while (i <= n){
+        sigma += i;
+        i++;
+    }
+    cout << "Jumlahnya dari " << n << " bil pertama adalah: " << sigma << endl;
+    
+}
+void tugas_4(){
+    //DO WHILE
+    int n, f = 1;
+    cout << "Masukkan bilangan positif: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "Faktorial tidak terdefinisi untuk bilangan negatif." << endl;
+    } else if (n == 0) {
+        cout << "Faktorial dari 0 adalah 1." << endl;
+    } else {
+        int originalN = n; // Simpan nilai asli n untuk ditampilkan nantinya
+        do {
+            f *= n;
+            n--;
+        } while (n >= 1);
+
+        cout << originalN << " faktorial adalah: " << f << endl;
+    }
+}
+void tugas_5(){
+    //while break
+    int i=1, n, sigma = 0;
+    cout << "Masukkan bilangan positif: ";
+    cin >> n;
+    while (1){
+        if(i > n) break; // loop berhenti ketika i > n
+        sigma += i;
+        i++;
+    }
+    cout << "Jumlahnya dari " << n << " bil pertama adalah: " << sigma << endl;
+    
+}
+void tugas_6(){
+    int n;
+    for(; ;){
+        cout << "Masukkan int : ;";
+        cin >> n;
+        if(n%2 == 0) break;
+        cout << "\tAkhir loop " << endl;
+    }
+    cout << "\tLuar loop" << endl;
+}
+void tugas_7(){
+    //NESTED LOOP
+    for(int i=1; i <=5; i++){ //lebar keatas
+        for(int j=1; j<=5; j++){ //lebar kesamping
+            cout << " * ";
+        }
+        cout << endl;
+    }
+}
+void tugas_8(){
+    //NESTED LOOP WHILE
+    int i=1;
+    while(i<=1){
+        int j=1;
+        while(j<=1){
+            cout << i << "," << j << " ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+void tugas_9(){
+    for(int i=1; i<=5; i++){
+        for(int j=1; j<=5; j++){
+            if(i == j || (i+j==6)){
+                cout << " * ";
+            }
+            else{
+                cout << "  ";
+            }
+            }
+        }
+        cout << endl;
+    }
+
+void tugas_10(){
+    for(int i=1; i<=7; i++){
+        for(int j=1; j<=7; j++){
+            if((i+j <=8 && i<=j) || (i+j>=8 && i>=j)){
+                cout << " * ";
+            }
+            else{
+                cout << "  ";
+            }
+        }
+    }
+}
+
+void tugas_11(){
+    long m,d, n=0;
+    cout << "Masukkan satu bilangan positif: ";
+    cin >> m;
+    while(m>0){
+        d = m % 10;
+        m /= 10;
+        n = 10*n + d;
+    }
+    cout << "Hasil pembalikan bilangan adalah: " << n;
+}
+
+
+int main() {
+    //tugas_1();
+    //tugas_2();
+    //tugas_3();
+    //tugas_4();
+    //tugas_5();
+    //tugas_6();
+    //tugas_7();
+    //tugas_8(); 
+    //tugas_9();  
+    //tugas_10(); 
+    tugas_11();
+
+}
