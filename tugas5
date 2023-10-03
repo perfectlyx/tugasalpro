@@ -1,0 +1,159 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double alas, tinggi, luasSegitiga, panjang, lebar, luasPersegiPanjang, prima, bintang, gaji;
+    int pilihan, ukt;
+    long n;
+    char lanjut;
+
+    cout << "Menu:" << endl;
+    cout << "1. Menghitung luas segitiga" << endl;
+    cout << "2. Menghitung luas persegi panjang" << endl;
+    cout << "3. Menghitung faktorial" << endl;
+    cout << "4. Menghitung bilangan prima" << endl;
+    cout << "5. Nested Looping " << endl;
+    cout << "6. Nested Looping Kebalik" << endl;
+    cout << "7. Mengecek bilangan prima atau bukan" << endl;
+    cout << "8. Menghitung UKT" << endl;
+    cout << "9. Keluar " << endl;
+
+    do {
+        cout << "Masukkan pilihan (1, 2, 3, 4, 5, 6, 7, 8, atau 9.): ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1: {
+                cout << "Masukkan panjang alas segitiga: ";
+                cin >> alas;
+
+                cout << "Masukkan tinggi segitiga: ";
+                cin >> tinggi;
+
+                luasSegitiga = (alas * tinggi) / 2;
+
+                cout << "Luas segitiga adalah: " << luasSegitiga << endl;
+                break;
+            }
+            case 2: {
+                cout << "Masukkan panjang persegi panjang: ";
+                cin >> panjang;
+
+                cout << "Masukkan lebar persegi panjang: ";
+                cin >> lebar;
+
+                luasPersegiPanjang = panjang * lebar;
+
+                cout << "Luas persegi panjang adalah: " << luasPersegiPanjang << endl;
+                break;
+            }
+            case 3: {
+                int n;
+                long double factorial = 1;
+                cout << "Masukkan angka faktorial:  ";
+                cin >> n;
+                if (n < 0)
+                    cout << "Error! Faktorial Negatif tidak terdefinisi ";
+                else {
+                    for (int i = 1; i <= n; ++i) {
+                        factorial *= i;
+                    }
+                    cout << "Faktorial dari " << n << " = " << factorial << endl;
+                }
+                break;
+            }
+            case 4: {
+                cout << "Masukkan batasan bilangan prima : ";
+                cin >> prima;
+                for (int a = 1; a < prima; a++) {
+                    int bil = 0;
+                    for (int b = 1; b <= a; b++) {
+                        if (a % b == 0) {
+                            bil = bil + 1;
+                        }
+                    }
+                    if (bil == 2) {
+                        cout << "bil prima : " << a << endl;
+                    }
+                }
+                break;
+            }
+            case 5: {
+                cout << "Masukkan n bintang: ";
+                cin >> bintang;
+                for (int i = 1; i <= bintang; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        cout << " * ";
+                    }
+                    cout << endl;
+                }
+                break;
+            }
+            case 6: {
+                cout << "Masukkan n bintang: ";
+                cin >> bintang;
+                for (int i = bintang; i >= 1; i--) {
+                    for (int j = 1; j <= i; j++) {
+                        cout << " * ";
+                    }
+                    cout << endl;
+                }
+                break;
+            }
+            case 7: {
+                int prima;
+                bool isPrime = true;
+
+                cout << "Masukkan nilai n apakah bilangan prima atau bukan: ";
+                cin >> prima;
+
+                if (prima <= 1) {
+                    isPrime = false;
+                } else {
+                    for (int a = 2; a * a <= prima; a++) {
+                        if (prima % a == 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+                if (isPrime) {
+                    cout << prima << " adalah bilangan prima" << endl;
+                } else {
+                    cout << prima << " bukan bilangan prima" << endl;
+                }
+                break;
+            }
+             case 8: {
+                cout << "Masukkan gaji kerja: (juta)";
+                cin >> gaji;
+
+                if (gaji >= 0 && gaji < 1000000) {
+                 ukt = 500000;
+                } else if (gaji >= 1000000 && gaji < 2000000) {
+                 ukt = 1000000;
+                } else if (gaji >= 2000000 && gaji < 3000000) {
+                ukt = 1500000;
+                } else if (gaji >= 3000000 && gaji < 4000000) {
+                ukt = 2000000;
+                } else {
+                ukt = 2500000;
+            }
+
+    cout << "UKT yang harus dibayarkan: " << ukt << " rupiah" << endl;
+                break;
+            }
+            case 9: {
+                cout << "Program selesai" << endl;
+                break;
+            }
+            default: {
+                cout << "Pilihan tidak valid" << endl;
+                break;
+            }
+        }
+       
+    } while (true);
+
+    return 0;
+}
